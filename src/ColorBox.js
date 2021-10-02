@@ -9,9 +9,10 @@ export default class ColorBox extends Component {
   }
 
   render() {
-      const opacity = this.props.value;
-      return this.props.value < .2 ? null : (
-        <div className="color-box" style={opacity -.1}></div>
+      return this.props.opacity < 0.2 ? null : (
+        <div className="color-box" style={{opacity: this.props.opacity}}>
+          <ColorBox opacity = {this.props.opacity - 0.1} />
+        </div>
     )
   }
 
